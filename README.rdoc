@@ -1,0 +1,3 @@
+== README
+
+This web app allows you to search by ingredients for recipes using Yummly's API.

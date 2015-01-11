@@ -1,0 +1,36 @@
+<div class="white box">
+    <p>
+        <em>Showing <font class="important"><%= @total_results %> recipes</font> with the following ingredients: <font class="important"><%= @ingredients %></font></em>
+    </p>
+</div>
+
+<div class="results">
+    <%= form_tag("/search", method: "get", id: "searchForm") do %>
+        <%= hidden_field_tag(:q, @q) %>
+        <%= hidden_field_tag(:images, @images) %>
+        <%= hidden_field_tag(:page, @page) %>
+        <%= hidden_field_tag(:totalPages, @total_pages) %>
+    <% end %>
+
+    <table id="recipesTable" class="fill collapse white box">
+        <tbody>
+                <% @recipes.each do |recipe| %>
+                    <tr>
+                        <td>
+                            <% if recipe.image_url %>
+                                <img src="<%= recipe.image_url %>">
+                            <% end %>
+                        </td>
+                        <td class="left">
+                            <%= link_to recipe.name, "http://www.yummly.com/recipe/" + recipe.id %><br>
+                            Rating: <%= recipe.rating %>, Total Time: <%= recipe.total_time %> minutes
+                        </td>
+                    </tr>
+                <% end %>
+        </tbody>
+    </table>
+</div>
+
+<div class="navigation">
+    &lt; <a id="navPrev" href="">Previous</a> | <a id="navNext" href="">Next</a> &gt;
+</div>

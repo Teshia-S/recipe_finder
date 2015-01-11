@@ -1,0 +1,34 @@
+<div class="white box">
+    <p>This website is designed for the cook who never has all the ingredients she needs in her kitchen! I thought it would be clever to find a recipe based on the ingredients she already has. Just input your ingredients and voila! A variety of recipes that you can tackle any day any time. Happy cooking! :)</p>
+</div>
+
+<div class="space"></div>
+
+<div class="white box">
+    <p class="important">Please enter your ingredients, separated by commas</p>
+
+    <%= form_tag("/search", method: "get") do %>
+    <table class="fill important">
+        <tbody>
+            <tr>
+                <td>
+                    <%= label_tag(:q, "Ingredients:") %>
+                    <%= text_field_tag(:q) %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= label_tag(:images, "Recipes with images only") %>
+                    <%= check_box_tag(:images) %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= submit_tag("Search") %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <%= hidden_field_tag(:page, 0) %>
+    <% end %>
+</div>

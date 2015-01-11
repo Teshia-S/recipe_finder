@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Recipe Finder</title>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+
+    <body>
+        <div class="background">
+            <div class="page">
+                <div class="header center">
+                    <h1><font class="heading">Recipe Finder</font></h1>
+                    <font class="small dark">Powered by Yummly&#8482;</font>
+                </div>
+
+                <div class="center">
+                    <%= yield %>
+                </div>
+
+                <div class="footer center">
+                    <a href="/">Home</a><br>
+                    <font class="small dark">Copyright &copy; 2015 Teshia Sooklal</font>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
