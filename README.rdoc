@@ -1,3 +1,5 @@
 == README
 
 This web app allows you to search by ingredients for recipes using Yummly's API.
+
+Try it out: [https://secret-ravine-4631.herokuapp.com/](https://secret-ravine-4631.herokuapp.com/)
